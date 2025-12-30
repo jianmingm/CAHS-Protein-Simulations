@@ -10,17 +10,23 @@ The following packages were used for running simulations and analyzing trajector
 `ChimeraX 1.9`[Download page](https://www.rbvi.ucsf.edu/chimerax/download.html)
 
 ## CAHS-dimer
-This folder contains the .mdp, .gro and .itp files for the five independent simulations of two CAHS12 proteins. The ie.mdp was used to rerun the trajectoeis and extract the short-range interaction energy between the proteins. The notebook pca.ipynb contains the codes for generating the PCA plots.  <br />
+This folder contains the .mdp, and .itp files for the five independent simulations of two CAHS12 proteins. The ie.mdp was used to rerun the trajectoeis and extract the short-range interaction energy between the proteins. The notebook pca.ipynb contains the codes for generating the PCA plots.  <br />
 
 ## CAHS-lipid
-This folder contains the .mdp, .gro and .itp files for setting up simulations of multiple CAHS12, CAHS12 ΔN, or CAHS12 ΔC proteins in the presence of a POPC membrane. Three independent simulations were carried out for each system. The notebooks, network.ipynb and quantification.ipynb, contain the codes for generating the network plots and statistics.   <br />
+This folder contains the .mdp, and .itp files for setting up simulations of multiple CAHS12, CAHS12 ΔN, or CAHS12 ΔC proteins in the presence of a POPC membrane. Three independent simulations were carried out for each system. The notebooks, network.ipynb and quantification.ipynb, contain the codes for generating the network plots and statistics.   <br />
 
 ## water-deletion 
-This folder contains the .mdp, .gro and .itp files for running simulations to mimic the dehydration process for the CAHS12,CAHS12 ΔN, or CAHS12 ΔC system in the presence of a POPC membrane. The notebook water_depletion.ipynb plots the results extracted from the simulations with the .csv files.  <br />
+This folder contains the .mdp, and .itp files for running simulations to mimic the dehydration process for the CAHS12,CAHS12 ΔN, or CAHS12 ΔC system in the presence of a POPC membrane. The notebook water_depletion.ipynb plots the results extracted from the simulations with the .csv files.  <br />
+
+## US_Dimer
+This folder contains the .mdp, .itp files and plumed input for running US simulations of the dissociation processes of a CAHS12 dimer starting from a parallel and antiparallel conformations.  <br />
+
+## POPC_POPG
+This folder contains the .mdp, .itp files for running unbiased simulations of a single CAHS12 protein in the presence of a POPC membrane with different percentages of anionic POPG lipids. The notebook quantifies the residue contact frequency with the membrane and plots the results.  <br />
 
 ## Citation
 
-If you use this work please cite: <br />
+If you find this useful, please cite: <br />
 
 <pre> TBA
 
