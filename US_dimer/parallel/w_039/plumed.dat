@@ -1,0 +1,34 @@
+RESTART
+WHOLEMOLECULES ENTITY0=1-1015581
+
+# --- Import groups from GROMACS index file ---
+g1N: GROUP NDX_FILE=index.ndx NDX_GROUP=p1_N
+g1C: GROUP NDX_FILE=index.ndx NDX_GROUP=p1_C
+g1M: GROUP NDX_FILE=index.ndx NDX_GROUP=p1_M
+
+g2N: GROUP NDX_FILE=index.ndx NDX_GROUP=p2_N
+g2C: GROUP NDX_FILE=index.ndx NDX_GROUP=p2_C
+g2M: GROUP NDX_FILE=index.ndx NDX_GROUP=p2_M
+
+# --- COMs ---
+p1N: CENTER ATOMS=g1N
+p1C: CENTER ATOMS=g1C
+p1M: CENTER ATOMS=g1M
+
+p2N: CENTER ATOMS=g2N
+p2C: CENTER ATOMS=g2C
+p2M: CENTER ATOMS=g2M
+
+# --- CVs ---
+theta: ANGLE ATOMS=p1N,p1C,p2C
+gamma: ANGLE ATOMS=p1C,p1N,p2N,p2C
+dmid:  DISTANCE ATOMS=p1M,p2M
+
+# --- Keep orientation (tune KAPPA as needed) ---
+keep_gamma: RESTRAINT ARG=gamma AT=0.13 KAPPA=2000
+keep_theta: RESTRAINT ARG=theta AT=1.57079632679 KAPPA=2000
+
+# --- Umbrella on distance (21.000000 will be substituted per window) ---
+us_dmid: RESTRAINT ARG=dmid AT=21.000000 KAPPA=250
+
+PRINT STRIDE=100 ARG=dmid,theta,gamma FILE=COLVAR

@@ -1,0 +1,15 @@
+
+#include "martini_v3.0.0.itp"
+#include "martini_v3.0.0_ions_v1.itp"
+#include "martini_v3.0.0_solvents_v1.itp"
+#include "martini_v3.0.0_phospholipids_v1.itp"
+#include "molecule_0.itp"
+
+[ system ]
+POPC in water
+
+[ molecules ]
+POPC 2646
+W           193192
+NA               9
+molecule_0 1
